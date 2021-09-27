@@ -1,9 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
+
 * {
     margin: 0;
     padding: 0;
 }
 
 body {
+    font-family: 'Chakra Petch', sans-serif;
 
     header {
         width: 100%;
@@ -38,7 +43,7 @@ body {
 
     section {
         
-        .about-me {
+        .about-me, .proyects-content, .skills-content {
             width: 90%;
             margin: 20px auto;
             
@@ -54,15 +59,77 @@ body {
             align-items: center;
             text-align: center;
             
-            img {
-                width: 200px;
-                height: 200px;
+            .top-img {
+                width: 150px;
+                height: 150px;
                 object-fit: cover;
                 object-position: center;
+                opacity: .7;
+
+                &:last-child {
+                    height: 190px;
+                }
             }
 
             label {
                 text-align: justify;
+            }
+        }
+
+        .download-cv-content {
+            width: 100%;
+            text-align: center;
+            
+            .btn-download-cv {
+                padding: 10px 25px 10px 25px;
+                border: 1px solid #1e212e;
+                background: linear-gradient(to left, #404457, #262a38);
+                color: #fff;
+                border-radius: 3px;
+                box-shadow: 1px 1px 2px 1px #1f1f1f inset, 0 0 3px 1px #181818;
+
+                &:hover {
+                    background: #404457;
+                    transition: all .3s;
+                    box-shadow: 1px 1px 2px 1px #464646;
+                }
+            }
+        }
+
+        .misc-background {
+            width: 100%;
+            background: linear-gradient(90deg, rgb(65, 149, 218), rgb(61, 72, 179), rgb(14, 58, 94));
+            color : rgb(245, 245, 245);
+            padding-bottom: 10px;
+            box-shadow: 1px 1px 4px 1px #1e212e;
+            margin: 50px auto;
+
+            .row {
+                width: 90%;
+                margin: 0 auto;
+            }
+            .line-separator {
+                width: 60%;
+                background-color: #fff;
+                height: 0.2rem;
+                border-radius: 10px;
+            }
+        }
+    }
+
+    footer {
+
+        .footer-background{
+            width: 100%;
+            background: linear-gradient(90deg, rgb(65, 149, 218), rgb(61, 72, 179), rgb(14, 58, 94));
+            color : rgb(245, 245, 245);
+            padding-top: 20px;
+            padding-bottom: 20px;
+            box-shadow: 1px 1px 4px 1px #1e212e;
+
+            .footer-content {
+                width: 90%;
+                margin: 0px auto;
             }
         }
     }
