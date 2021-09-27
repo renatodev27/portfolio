@@ -43,7 +43,7 @@ body {
 
     section {
         
-        .about-me, .proyects-content, .skills-content {
+        .about-me, .proyects-content, .skills-content, .experience-content {
             width: 90%;
             margin: 20px auto;
             
@@ -117,12 +117,56 @@ body {
         }
 
         .proyects-content {
+            width: 100%;
+
+            .pc-header { width: 90%; margin: 0 auto; }
 
             .proyect-img {
                 width: 100%; 
                 height: 200px;
                 object-fit: cover;
                 object-position: center;
+            }
+
+            .card {
+                box-shadow: 2px 2px 8px -5px rgb(12, 12, 12);
+
+                .btn-proyect {
+                    background-color: #ff3a4a;
+                    border: 1px solid #ff3a4a;
+                    padding: 4px 10px;
+                    border-radius: 3px;
+                    color: #fff;
+                    box-shadow: 1px 1px 4px 1px #ccc;
+                    display: none;
+
+                    &:hover {
+                        background-color: #ff707c;
+                        border: 1px solid #ff707c;
+                        transition: all .3s;
+                    }
+                }
+
+                &:hover {
+                    transform: scale(1.1, 1.1);
+                    box-shadow: 2px 2px 10px 1px rgb(136, 136, 136);
+                    z-index: 1;
+                    transition: all .3s;
+
+                    .btn-proyect {
+                        display: block;
+                    }
+
+                    .proyect-img {
+                        opacity: .6;
+                        transition: all .3s;
+                        
+                    }
+                }
+
+                p {
+                    text-align: justify;
+                }
             }
         }
     }
@@ -140,6 +184,13 @@ body {
             .footer-content {
                 width: 90%;
                 margin: 0px auto;
+            }
+
+            a {
+                text-decoration: none;
+                color: #fff;
+                padding: 20px;
+                font-size: 3rem;
             }
         }
     }
