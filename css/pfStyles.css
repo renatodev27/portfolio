@@ -165,5 +165,12 @@ body footer .footer-background a {
   padding: 20px;
   font-size: 3rem;
 }
+body footer .footer-background h6 {
+  text-align: end;
+  font-size: 0.85rem;
+  margin-right: 15px;
+  margin-bottom: -10px;
+  color: #ccc;
+}
 
 /*# sourceMappingURL=pfstyles.css.map */
