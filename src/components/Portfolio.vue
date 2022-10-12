@@ -101,10 +101,10 @@ export default {
     methods: {
         openProyect(destination) {
             switch (destination) {
-                case 'ecommerce' : window.open('https://renatodev27.github.io/web-ecommerce-un/');
-                case 'cashregis' : window.open('https://renatodev27.github.io/Caja_registradora/');
-                case 'calculadora' : window.open('https://renatodev27.github.io/calculadora/');
-                case 'pokedex' : window.open('https://renatodev27.github.io/pokedex/');
+                case 'ecommerce' : window.open('https://e-commerce-chi-mauve.vercel.app/');
+                case 'cashregis' : window.open('https://cash-register-gilt.vercel.app/');
+                case 'calculadora' : window.open('https://calculator-b4dt.vercel.app/');
+                case 'pokedex' : window.open('https://pokedex-nu-snowy.vercel.app/');
             }
         }
     }

@@ -69,7 +69,7 @@
                                 </div>
                                 <div class="col-md-7">
                                     <div class="progress">
-                                        <div class="progress-bar" style="width: 50%" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar" style="width: 60%" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
                             </div>
@@ -166,7 +166,7 @@
                                 </div>
                                 <div class="col-md-7">
                                     <div class="progress">
-                                        <div class="progress-bar" style="width: 78%" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar" style="width: 70%" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
                             </div>
@@ -249,21 +249,11 @@
                         <div class="col-md-5">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <h6><img class="language-icon" src="../assets/logos/git.png"> Git</h6>
-                                </div>
-                                <div class="col-md-7">
-                                    <div class="progress">
-                                        <div class="progress-bar" style="width: 60%" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
                                     <h6><img class="language-icon" src="../assets/logos/github.png"> GitHub</h6>
                                 </div>
                                 <div class="col-md-7">
                                     <div class="progress">
-                                        <div class="progress-bar" style="width: 65%" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar" style="width: 55%" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
                             </div>
@@ -273,7 +263,7 @@
                                 </div>
                                 <div class="col-md-7">
                                     <div class="progress">
-                                        <div class="progress-bar" style="width: 50%" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar" style="width: 35%" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
                             </div>

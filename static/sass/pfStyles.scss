@@ -10,7 +10,8 @@
 body {
     font-family: 'Oxygen', sans-serif;
     background-color: #070707;
-    overflow: hidden;
+
+    @media (min-width: 575px) { overflow: hidden }
 
     a { cursor: pointer } 
 
@@ -19,71 +20,138 @@ body {
         width: 100%;
         background-color: transparent;
 
-        ul { 
-            display: flex; 
+        .mobile-btn { display: none }
+
+        ul.desktop-menu { 
             list-style: none;
             background-color: transparent;
 
-            li {
-                padding: 20px 15px;
+            @media (max-width: 575px) { 
+                display: block;
+                visibility: hidden;
+                opacity: 0;
+                padding: 0 10px 0 10px;
+                z-index: 2;
+                margin-top: -15px;
+                height: 0;
+                transition: ease-in .3s;
 
-                a {
-                    padding: 7px 10px;
-                    text-decoration: none;
-                    color: rgb(255, 255, 2555);
-                    font-size: 0.85rem;
+                &.menu-open {
+                    visibility: visible;
+                    height: 100%;
+                    opacity: 1;
+                    transition: ease-out .4s;
+                }
 
-                    i { margin-top: 3px }
+                li {
+                    border-bottom: 1px solid rgb(255, 104, 104);
 
-                    .menu-text { 
-                        visibility: hidden;
-                        opacity: 0;
-                        margin-right: -60px;
-                    }
-    
-                    &:hover:not(.active) {
-                        border-radius: 50px;
-                        padding: 7px 10px;
-                        transition: all .3s;
-                        color: rgb(255, 41, 41);
-                
+                    a{ 
+                        display: block !important;
+                        text-decoration:  none;
+                        padding: 7px;
+                        color: #FFF;
+
+                        &:active, &.active {
+                            color: rgb(255, 41, 41) !important;
+                            transition: all .3s;
+                        }
+
                         .menu-text { 
-                            color: rgb(255, 41, 41);
-                            visibility: visible;
-                            opacity: 1;
-                            animation: fade-in 500ms forwards;
-                            margin-left: 8px;
-                            margin-right: 0;
-                            //display: block;
-                            transition: cubic-bezier(1, 0, 0, 1) .3s all;
-                        } 
-                    }
-
-                    &.active { 
-                        color: #FFFFFF;
-                        background-color: rgb(255, 41, 41);
-                        border-radius: 50px; 
-                        
-                        .menu-text {
-                            margin-left: 8px; 
-                            display: block;
-                            visibility: visible; 
-                            font-weight: bold; 
-                            margin-right: 0; 
-                            opacity: 1 }
+                            margin-left: 10px;
+                        }
                     }
                 }
             }
+
+            @media (min-width: 576px) {
+                display: flex; 
+
+                li {
+                    padding: 20px 15px;
+    
+                    a {
+                        padding: 7px 10px;
+                        text-decoration: none;
+                        color: rgb(255, 255, 255);
+                        font-size: 0.85rem;
+    
+                        i { margin-top: 3px }
+    
+                        .menu-text { 
+                            visibility: hidden;
+                            opacity: 0;
+                            margin-right: -60px;
+                        }
+        
+                        &:hover:not(.active) {
+                            border-radius: 50px;
+                            padding: 7px 10px;
+                            transition: all .3s;
+                            color: rgb(255, 41, 41);
+                    
+                            .menu-text { 
+                                color: rgb(255, 41, 41);
+                                visibility: visible;
+                                opacity: 1;
+                                animation: fade-in 500ms forwards;
+                                margin-left: 8px;
+                                margin-right: 0;
+                                transition: cubic-bezier(1, 0, 0, 1) .3s all;
+                            } 
+                        }
+    
+                        &.active { 
+                            color: #FFFFFF;
+                            background-color: rgb(255, 41, 41);
+                            border-radius: 50px; 
+                            
+                            .menu-text {
+                                margin-left: 8px; 
+                                display: block;
+                                visibility: visible; 
+                                font-weight: bold; 
+                                margin-right: 0; 
+                                opacity: 1 }
+                        }
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 575px) {
+
+            .mobile-btn { 
+                display: block;
+                margin: 10px;
+                padding: 5px 10px 5px 10px;
+                color: #FFF;
+                background-color: transparent;
+                border: none;
+
+                &:active, &.active {
+                    color: rgb(255, 41, 41);
+                    transition: all .3s;
+                }
+            }
+
         }
     }
 
     .background-container {
         position: absolute;
         width: 100%;
-        height: 100vh;
-        max-height: 100vh;
 
-        &.one { background: url('../assets/background.jpg') fixed no-repeat; background-size: cover; }
+        @media (min-width: 575px) {
+            height: 100vh;
+            max-height: 100vh;
+        }
+
+        &.one { 
+            background: url('../assets/background.jpg') fixed no-repeat; 
+            background-size: cover;
+            height: 100%;
+        }
         &.two { background: url('../assets/background2.jpg') fixed no-repeat; background-size: cover; }
         &.three { background: url('../assets/background3.jpg') fixed no-repeat; background-size: cover; }
         &.four { background: url('../assets/background4.jpg') fixed no-repeat; background-size: cover; }
@@ -161,6 +229,7 @@ body {
             overflow-x: hidden;
             width: 88%;
             margin: 0 auto;
+            padding-bottom: 20px;
 
             &::-webkit-scrollbar-thumb {
                 background: linear-gradient(45deg, rgb(83, 73, 73), rgb(182, 35, 35));
@@ -327,9 +396,12 @@ body {
     }
 
     footer {
-        position: absolute;
         width: 100%;
-        bottom: 0;
+
+        @media (min-width: 575px) {
+            position: absolute;
+            bottom: 0;
+        }
 
         .footer-background{
             width: 100%;

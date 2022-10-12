@@ -1,6 +1,9 @@
 <template>
     <nav>
-        <ul>
+        <button class="mobile-btn" @click="openCloseMenu()" :class="isOpen ? 'active' : ''">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="desktop-menu" :class="isOpen ? 'menu-open' : ''">
             <li> 
                 <a class="d-flex justify-content-evenly me-3" @click="toLink(1)" :class="menu === 1 ? 'active' : ''"> 
                     <i class="fas fa-home"></i> <span class="menu-text">Inicio</span>
@@ -36,7 +39,12 @@ export default {
     props: {
         menu: {
             type: Number,
-            required: true
+            required: true,
+        }
+    },
+    data() {
+        return {
+            isOpen: false
         }
     },
     methods: {
@@ -48,7 +56,9 @@ export default {
                 case 4 : this.$router.push({ name: 'experience' }); break;
                 case 5 : this.$router.push({ name: 'portfolio' }); break;
             }
-            
+        },
+        openCloseMenu() {
+            this.isOpen = !this.isOpen;
         }
     }
 }

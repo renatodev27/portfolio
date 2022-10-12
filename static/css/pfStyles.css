@@ -7,63 +7,110 @@
 
 body {
   font-family: 'Oxygen', sans-serif;
-  background-color: #070707;
-  overflow: hidden; }
+  background-color: #070707; }
+  @media (min-width: 575px) {
+    body {
+      overflow: hidden; } }
   body a {
     cursor: pointer; }
   body nav {
     z-index: 999;
     width: 100%;
     background-color: transparent; }
-    body nav ul {
-      display: flex;
+    body nav .mobile-btn {
+      display: none; }
+    body nav ul.desktop-menu {
       list-style: none;
       background-color: transparent; }
-      body nav ul li {
-        padding: 20px 15px; }
-        body nav ul li a {
-          padding: 7px 10px;
-          text-decoration: none;
-          color: white;
-          font-size: 0.85rem; }
-          body nav ul li a i {
-            margin-top: 3px; }
-          body nav ul li a .menu-text {
-            visibility: hidden;
-            opacity: 0;
-            margin-right: -60px; }
-          body nav ul li a:hover:not(.active) {
-            border-radius: 50px;
-            padding: 7px 10px;
-            transition: all .3s;
-            color: #ff2929; }
-            body nav ul li a:hover:not(.active) .menu-text {
-              color: #ff2929;
-              visibility: visible;
-              opacity: 1;
-              animation: fade-in 500ms forwards;
-              margin-left: 8px;
-              margin-right: 0;
-              transition: cubic-bezier(1, 0, 0, 1) 0.3s all; }
-          body nav ul li a.active {
-            color: #FFFFFF;
-            background-color: #ff2929;
-            border-radius: 50px; }
-            body nav ul li a.active .menu-text {
-              margin-left: 8px;
-              display: block;
-              visibility: visible;
-              font-weight: bold;
-              margin-right: 0;
-              opacity: 1; }
+      @media (max-width: 575px) {
+        body nav ul.desktop-menu {
+          display: block;
+          visibility: hidden;
+          opacity: 0;
+          padding: 0 10px 0 10px;
+          z-index: 2;
+          margin-top: -15px;
+          height: 0;
+          transition: ease-in .3s; }
+          body nav ul.desktop-menu.menu-open {
+            visibility: visible;
+            height: 100%;
+            opacity: 1;
+            transition: ease-out .4s; }
+          body nav ul.desktop-menu li {
+            border-bottom: 1px solid #ff6868; }
+            body nav ul.desktop-menu li a {
+              display: block !important;
+              text-decoration: none;
+              padding: 7px;
+              color: #FFF; }
+              body nav ul.desktop-menu li a:active, body nav ul.desktop-menu li a.active {
+                color: #ff2929 !important;
+                transition: all .3s; }
+              body nav ul.desktop-menu li a .menu-text {
+                margin-left: 10px; } }
+      @media (min-width: 576px) {
+        body nav ul.desktop-menu {
+          display: flex; }
+          body nav ul.desktop-menu li {
+            padding: 20px 15px; }
+            body nav ul.desktop-menu li a {
+              padding: 7px 10px;
+              text-decoration: none;
+              color: white;
+              font-size: 0.85rem; }
+              body nav ul.desktop-menu li a i {
+                margin-top: 3px; }
+              body nav ul.desktop-menu li a .menu-text {
+                visibility: hidden;
+                opacity: 0;
+                margin-right: -60px; }
+              body nav ul.desktop-menu li a:hover:not(.active) {
+                border-radius: 50px;
+                padding: 7px 10px;
+                transition: all .3s;
+                color: #ff2929; }
+                body nav ul.desktop-menu li a:hover:not(.active) .menu-text {
+                  color: #ff2929;
+                  visibility: visible;
+                  opacity: 1;
+                  animation: fade-in 500ms forwards;
+                  margin-left: 8px;
+                  margin-right: 0;
+                  transition: cubic-bezier(1, 0, 0, 1) 0.3s all; }
+              body nav ul.desktop-menu li a.active {
+                color: #FFFFFF;
+                background-color: #ff2929;
+                border-radius: 50px; }
+                body nav ul.desktop-menu li a.active .menu-text {
+                  margin-left: 8px;
+                  display: block;
+                  visibility: visible;
+                  font-weight: bold;
+                  margin-right: 0;
+                  opacity: 1; } }
+    @media (max-width: 575px) {
+      body nav .mobile-btn {
+        display: block;
+        margin: 10px;
+        padding: 5px 10px 5px 10px;
+        color: #FFF;
+        background-color: transparent;
+        border: none; }
+        body nav .mobile-btn:active, body nav .mobile-btn.active {
+          color: #ff2929;
+          transition: all .3s; } }
   body .background-container {
     position: absolute;
-    width: 100%;
-    height: 100vh;
-    max-height: 100vh; }
+    width: 100%; }
+    @media (min-width: 575px) {
+      body .background-container {
+        height: 100vh;
+        max-height: 100vh; } }
     body .background-container.one {
       background: url("../assets/background.jpg") fixed no-repeat;
-      background-size: cover; }
+      background-size: cover;
+      height: 100%; }
     body .background-container.two {
       background: url("../assets/background2.jpg") fixed no-repeat;
       background-size: cover; }
@@ -126,7 +173,8 @@ body {
     overflow: auto;
     overflow-x: hidden;
     width: 88%;
-    margin: 0 auto; }
+    margin: 0 auto;
+    padding-bottom: 20px; }
     body section .tools-tecnology::-webkit-scrollbar-thumb {
       background: linear-gradient(45deg, #534949, #b62323);
       border-radius: 10px; }
@@ -239,9 +287,11 @@ body {
           opacity: .85;
           transition: all .3s; }
   body footer {
-    position: absolute;
-    width: 100%;
-    bottom: 0; }
+    width: 100%; }
+    @media (min-width: 575px) {
+      body footer {
+        position: absolute;
+        bottom: 0; } }
     body footer .footer-background {
       width: 100%;
       background-color: transparent;
