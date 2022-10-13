@@ -3,6 +3,7 @@
         <navbar :menu="2" />
         <section>
             <div class="about-me">
+                <img src="../assets/profile_picture.jpg" class="mobile-profile-pic">
                 <div class="text-content">
                     <h1>Soy Renato</h1>
                     <h5 class="profesion">Desarrollador web y aplicaciones</h5>

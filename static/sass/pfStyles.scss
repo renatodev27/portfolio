@@ -11,7 +11,7 @@ body {
     font-family: 'Oxygen', sans-serif;
     background-color: #070707;
 
-    @media (min-width: 575px) { overflow: hidden }
+    @media (min-width: 576px) { overflow: hidden }
 
     a { cursor: pointer } 
 
@@ -139,23 +139,19 @@ body {
     }
 
     .background-container {
-        position: absolute;
         width: 100%;
 
         @media (min-width: 575px) {
             height: 100vh;
             max-height: 100vh;
-        }
+            position: absolute;
 
-        &.one { 
-            background: url('../assets/background.jpg') fixed no-repeat; 
-            background-size: cover;
-            height: 100%;
+            &.one { background: url('../assets/background.jpg') fixed no-repeat; background-size: cover; }
+            &.two { background: url('../assets/background2.jpg') fixed no-repeat; background-size: cover; }
+            &.three { background: url('../assets/background3.jpg') fixed no-repeat; background-size: cover; }
+            &.four { background: url('../assets/background4.jpg') fixed no-repeat; background-size: cover; }
+            &.fifth { background: url('../assets/background5.jpg') fixed no-repeat; background-size: cover; }
         }
-        &.two { background: url('../assets/background2.jpg') fixed no-repeat; background-size: cover; }
-        &.three { background: url('../assets/background3.jpg') fixed no-repeat; background-size: cover; }
-        &.four { background: url('../assets/background4.jpg') fixed no-repeat; background-size: cover; }
-        &.fifth { background: url('../assets/background5.jpg') fixed no-repeat; background-size: cover; }
     }
 
     hr {
@@ -167,6 +163,10 @@ body {
         width: 100%;
         color: rgb(255, 255, 255);
         margin-top: 20vh;
+
+        @media (max-width: 575px) {
+            padding-bottom: 20vh;
+        }
 
         .content {
             width: 100%;
@@ -207,29 +207,73 @@ body {
             width: 65%;
             color: #FFF;
 
+            @media (max-width: 575px) {
+                display: block;
+
+                .text-content{
+                    width: 100% !important;
+                    text-align: justify;
+
+                    h1, h5 { 
+                        text-align: center; 
+                    }
+                }
+                .mobile-profile-pic {
+                    display: block !important;
+                    margin: 20px auto;
+                }
+                .profile-picture {
+                    display: none;
+                }
+            }
+
             .text-content {
                 width: 48%;
 
                 h5.profesion { color:rgb(250, 7, 7) }
             }
 
-            .profile-picture {
-                width: 300px;
-                height: 300px;
+            .profile-picture, .mobile-profile-pic {
                 border-radius: 50%;
                 justify-content: center;
                 box-shadow: 0 0 250px 14px rgb(20, 19, 19);
+            }
+
+            .mobile-profile-pic {
+                display: none;
+                width: 150px;
+                height: 150px;
+            }
+
+            .profile-picture {
+                width: 300px;
+                height: 300px;
             }
         }
 
         .tools-tecnology {
             color: #FFF;
-            max-height: 79vh;
+            
             overflow: auto;
             overflow-x: hidden;
             width: 88%;
             margin: 0 auto;
             padding-bottom: 20px;
+
+            @media (min-width: 576px) {
+                max-height: 79vh;
+            }
+
+            @media (max-width: 575px) {
+                h5 {
+                    margin-top: 10px;
+                }
+
+                li {
+                    list-style: square;
+                    margin-bottom: 20px;
+                }
+            }
 
             &::-webkit-scrollbar-thumb {
                 background: linear-gradient(45deg, rgb(83, 73, 73), rgb(182, 35, 35));
@@ -249,7 +293,10 @@ body {
 
             .top-img { 
                 width: 40px;
-                margin-right: 120px;
+
+                @media (min-width: 576px) {
+                    margin-right: 120px;
+                }
             }
             
             .language-icon {
@@ -274,11 +321,14 @@ body {
 
         .experience {
             color: #FFF;
-            max-height: 79vh;
-            overflow: auto;
-            overflow-x: hidden;
             width: 92%;
             margin: 0 auto;
+
+            @media (min-width: 576px) {
+                max-height: 79vh;
+                overflow: auto;
+                overflow-x: hidden;
+            }
 
             &::-webkit-scrollbar-thumb {
                 background: linear-gradient(45deg, rgb(83, 73, 73), rgb(182, 35, 35));
@@ -311,18 +361,32 @@ body {
             }
 
             .list-two { list-style: square }
-            .list-three { list-style: circle; }
+
+            .list-three { 
+                list-style: circle; 
+
+                @media (max-width: 575px) { 
+                    margin-bottom: 50px;
+                }
+            }
         }
 
         .proyects {
             color: #FFF;
-            max-height: 77vh;
-            overflow: auto;
-            overflow-x: hidden;
             width: 95%;
             margin: 0 auto;
 
-            .content { padding: 0 50px;}
+            @media (min-width: 576px) {
+                max-height: 77vh;
+                overflow: auto;
+                overflow-x: hidden;
+            }
+
+            .content { 
+                @media (min-width: 768px) {
+                    padding: 0 50px;
+                }
+            }
 
             &::-webkit-scrollbar-thumb {
                 background: linear-gradient(45deg, rgb(83, 73, 73), rgb(182, 35, 35));
@@ -340,7 +404,10 @@ body {
                 box-shadow: 0 0 1px inset #ccc;
             }
 
-            .pc-header { width: 90%; margin: 0 auto; }
+            .pc-header { 
+                width: 90%; 
+                margin: 0 auto; 
+            }
 
             .proyect-img {
                 width: 100%; 
@@ -352,6 +419,19 @@ body {
 
             .card {
                 background: linear-gradient(270deg, rgb(88, 76, 76), rgb(126, 67, 67));
+
+                @media (max-width: 575px) {
+                    .table {
+                        td {
+                            width: 100%;
+                            display: block;
+
+                            &.text-end {
+                                padding: 20px;
+                            }
+                        }
+                    }
+                }
 
                 .card-body {
                     background-color: rgba(31, 31, 36, 0.95);
@@ -434,8 +514,7 @@ body {
     .slide-fade-leave-active {
         transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
     }
-    .slide-fade-enter, .slide-fade-leave-to
-    /* .slide-fade-leave-active below version 2.1.8 */ {
+    .slide-fade-enter, .slide-fade-leave-to {
         transform: translateX(10px);
         opacity: 0;
     }
