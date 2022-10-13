@@ -8,7 +8,7 @@ Vue.config.productionTip = false
 
 router.afterEach( (to) => {
   document.body.style.backgroundRepeat = to.meta && to.meta.bgImage ? 'no-repeat' : ''
-  document.body.style.backgroundPosition = to.meta && to.meta.bgImage ? 'top right' : ''
+  document.body.style.backgroundPosition = to.meta && to.meta.bgImage ? 'center' : ''
   document.body.style.backgroundAttachment = to.meta && to.meta.bgImage ? 'fixed' : ''
   document.body.style.backgroundImage = to.meta && to.meta.bgImage ? `url(${to.meta.bgImage})` : ''
 });

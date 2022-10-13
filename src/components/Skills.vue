@@ -238,8 +238,8 @@
 
                 <div class="mt-5">
                     <div class="row">
-                        <h5 class="col-6">Control de versiones</h5>
-                        <div class="col-6" align="right"> <img src="../assets/controlvers.png" class="top-img"></div>
+                        <h5 class="col-8">Control de versiones</h5>
+                        <div class="col-4" align="right"> <img src="../assets/controlvers.png" class="top-img"></div>
                     </div>
                     <hr class="mt-1 mb-3">
                     <div class="row mt-4">
