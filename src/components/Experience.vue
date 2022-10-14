@@ -1,6 +1,5 @@
 <template>
-    <div class="background-container four">
-        <navbar :menu="4" />
+    <div class="background-container">
         <section class="mt-5">
             <div class="experience">
                 <div class="row">
@@ -46,10 +45,16 @@
 </template>
 
 <script>
-import Navbar from './Navbar.vue'
 
 export default {
     name: 'experience',
-    components: { Navbar }
+    methods: {
+        redirectLink(number) {
+            this.$emit('setLink', number);
+        }
+    },
+    mounted() {
+        this.redirectLink(4)
+    }
 }
 </script>

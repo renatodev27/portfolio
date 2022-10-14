@@ -30,11 +30,17 @@ body {
                 display: block;
                 visibility: hidden;
                 opacity: 0;
-                padding: 0 10px 0 10px;
+                padding: 0;
                 z-index: 2;
-                margin-top: -15px;
+                margin-left: 10px;
+                margin-right: 50px;
+                margin-top: -10px;
                 height: 0;
                 transition: ease-in .3s;
+                border: 1px solid rgb(255, 64, 64);
+                background-color: rgba(28, 28, 32, 0.85);
+                border-radius: 0 5px 5px 5px;
+                box-shadow: 0 0 6px 0 rgb(119, 52, 52);
 
                 &.menu-open {
                     visibility: visible;
@@ -44,16 +50,23 @@ body {
                 }
 
                 li {
-                    border-bottom: 1px solid rgb(255, 104, 104);
+                    border-bottom: 1px solid rgb(255, 64, 64);
+
+                    &:last-child {
+                        border-bottom: none;
+                    }
 
                     a{ 
                         display: block !important;
                         text-decoration:  none;
                         padding: 7px;
+                        width: 100%;
                         color: #FFF;
 
                         &:active, &.active {
-                            color: rgb(255, 41, 41) !important;
+                            background-color: rgb(255, 64, 64) !important;
+                            color: #fff;
+                            font-weight: bold;
                             transition: all .3s;
                         }
 
@@ -130,8 +143,11 @@ body {
                 border: none;
 
                 &:active, &.active {
-                    color: rgb(255, 41, 41);
+                    background-color: rgb(255, 64, 64);
+                    color: rgb(255, 255, 255);
+                    border-radius: 4px 4px 0 0;
                     transition: all .3s;
+                    //border: 1px solid rgb(255, 104, 104);
                 }
             }
 
@@ -145,12 +161,6 @@ body {
             height: 100vh;
             max-height: 100vh;
             position: absolute;
-
-            &.one { background: url('../assets/background.jpg') fixed no-repeat; background-size: cover; }
-            &.two { background: url('../assets/background2.jpg') fixed no-repeat; background-size: cover; }
-            &.three { background: url('../assets/background3.jpg') fixed no-repeat; background-size: cover; }
-            &.four { background: url('../assets/background4.jpg') fixed no-repeat; background-size: cover; }
-            &.fifth { background: url('../assets/background5.jpg') fixed no-repeat; background-size: cover; }
         }
     }
 

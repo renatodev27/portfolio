@@ -1,6 +1,5 @@
 <template>
-  <div class="background-container one">
-    <navbar :menu="1" />
+  <div class="background-container">
     <header>
         <div class="content">
             <h2 class="mb-0 name">RENATO</h2>
@@ -13,10 +12,16 @@
 </template>
 
 <script>
-import Navbar from './Navbar.vue'
 
 export default {
     name: 'home',
-    components: { Navbar }
+    methods: {
+        redirectLink(number) {
+            this.$emit('setLink', number);
+        }
+    },
+    mounted() {
+        this.redirectLink(1)
+    }
 }
 </script>

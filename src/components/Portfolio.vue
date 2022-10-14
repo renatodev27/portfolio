@@ -1,7 +1,5 @@
 <template>
-    <div class="background-container fifth">
-        <navbar :menu="5" />
-
+    <div class="background-container">
         <section class="mb-5">
             <div class="proyects">
                 <div class="content">
@@ -93,11 +91,9 @@
 </template>
 
 <script>
-import Navbar from './Navbar.vue'
 
 export default {
     name: 'portfolio',
-    components: { Navbar },
     methods: {
         openProyect(destination) {
             switch (destination) {
@@ -107,6 +103,14 @@ export default {
                 case 'pokedex' : window.open('https://pokedex-nu-snowy.vercel.app/');
             }
         }
+    },
+    methods: {
+        redirectLink(number) {
+            this.$emit('setLink', number);
+        }
+    },
+    mounted() {
+        this.redirectLink(5)
     }
 }
 </script>

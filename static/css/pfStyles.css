@@ -27,25 +27,36 @@ body {
           display: block;
           visibility: hidden;
           opacity: 0;
-          padding: 0 10px 0 10px;
+          padding: 0;
           z-index: 2;
-          margin-top: -15px;
+          margin-left: 10px;
+          margin-right: 50px;
+          margin-top: -10px;
           height: 0;
-          transition: ease-in .3s; }
+          transition: ease-in .3s;
+          border: 1px solid #ff4040;
+          background-color: rgba(28, 28, 32, 0.85);
+          border-radius: 0 5px 5px 5px;
+          box-shadow: 0 0 6px 0 #773434; }
           body nav ul.desktop-menu.menu-open {
             visibility: visible;
             height: 100%;
             opacity: 1;
             transition: ease-out .4s; }
           body nav ul.desktop-menu li {
-            border-bottom: 1px solid #ff6868; }
+            border-bottom: 1px solid #ff4040; }
+            body nav ul.desktop-menu li:last-child {
+              border-bottom: none; }
             body nav ul.desktop-menu li a {
               display: block !important;
               text-decoration: none;
               padding: 7px;
+              width: 100%;
               color: #FFF; }
               body nav ul.desktop-menu li a:active, body nav ul.desktop-menu li a.active {
-                color: #ff2929 !important;
+                background-color: #ff4040 !important;
+                color: #fff;
+                font-weight: bold;
                 transition: all .3s; }
               body nav ul.desktop-menu li a .menu-text {
                 margin-left: 10px; } }
@@ -98,7 +109,9 @@ body {
         background-color: transparent;
         border: none; }
         body nav .mobile-btn:active, body nav .mobile-btn.active {
-          color: #ff2929;
+          background-color: #ff4040;
+          color: white;
+          border-radius: 4px 4px 0 0;
           transition: all .3s; } }
   body .background-container {
     width: 100%; }
@@ -106,22 +119,7 @@ body {
       body .background-container {
         height: 100vh;
         max-height: 100vh;
-        position: absolute; }
-        body .background-container.one {
-          background: url("../assets/background.jpg") fixed no-repeat;
-          background-size: cover; }
-        body .background-container.two {
-          background: url("../assets/background2.jpg") fixed no-repeat;
-          background-size: cover; }
-        body .background-container.three {
-          background: url("../assets/background3.jpg") fixed no-repeat;
-          background-size: cover; }
-        body .background-container.four {
-          background: url("../assets/background4.jpg") fixed no-repeat;
-          background-size: cover; }
-        body .background-container.fifth {
-          background: url("../assets/background5.jpg") fixed no-repeat;
-          background-size: cover; } }
+        position: absolute; } }
   body hr {
     background: linear-gradient(90deg, #ff4e4e, #3a3232);
     width: 90%; }

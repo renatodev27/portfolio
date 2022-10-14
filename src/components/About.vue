@@ -1,6 +1,5 @@
 <template>
-    <div class="background-container two">
-        <navbar :menu="2" />
+    <div class="background-container">
         <section>
             <div class="about-me">
                 <img src="../assets/profile_picture.jpg" class="mobile-profile-pic">
@@ -21,6 +20,16 @@ import Navbar from './Navbar.vue'
 
 export default {
     name: 'about',
-    components: { Navbar }
+    components: { 
+        Navbar 
+    },
+    methods: {
+        redirectLink(number) {
+            this.$emit('setLink', number);
+        }
+    },
+    mounted() {
+        this.redirectLink(2)
+    }
 }
 </script>

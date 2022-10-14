@@ -1,8 +1,9 @@
 <template>
     <div>
-      <transition name="slide-fade">
-        <router-view/>
-      </transition>
+        <navbar :menu="link" ref="navbar"/>
+        <transition name="slide-fade">
+            <router-view @setLink="getLink" />
+        </transition>
 
       <footbar />
     </div>
@@ -10,9 +11,20 @@
 
 <script>
 import Footbar from './components/Footer.vue'
+import Navbar from './components/Navbar.vue'
 
 export default {
     name: 'App',
-    components: { Footbar }
+    components: { Footbar, Navbar },
+    data() {
+        return {
+            link: undefined
+        }
+    },
+    methods: {
+        getLink(link) {
+            this.link = link
+        }
+    }
 }
 </script>

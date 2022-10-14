@@ -1,6 +1,5 @@
 <template>
-    <div class="background-container three">
-        <navbar :menu="3" />
+    <div class="background-container">
         <section >
             <div class="tools-tecnology">
                 <h2 class="text-center mb-4">Tecnologías</h2>
@@ -276,10 +275,16 @@
 </template>
 
 <script>
-import Navbar from './Navbar.vue'
 
 export default {
     name: 'skills',
-    components: { Navbar }
+    methods: {
+        redirectLink(number) {
+            this.$emit('setLink', number);
+        }
+    },
+    mounted() {
+        this.redirectLink(3)
+    }
 }
 </script>
