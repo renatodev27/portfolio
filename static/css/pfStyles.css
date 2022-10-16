@@ -36,8 +36,7 @@ body {
           transition: ease-in .3s;
           border: 1px solid #ff4040;
           background-color: rgba(28, 28, 32, 0.85);
-          border-radius: 0 5px 5px 5px;
-          box-shadow: 0 0 6px 0 #773434; }
+          border-radius: 0 5px 5px 5px; }
           body nav ul.desktop-menu.menu-open {
             visibility: visible;
             height: 100%;
@@ -115,7 +114,7 @@ body {
           transition: all .3s; } }
   body .background-container {
     width: 100%; }
-    @media (min-width: 575px) {
+    @media (min-width: 576px) {
       body .background-container {
         height: 100vh;
         max-height: 100vh;
@@ -154,7 +153,8 @@ body {
   body section .about-me {
     display: flex;
     justify-content: space-between;
-    margin: 10% auto;
+    align-items: center;
+    margin: 7% auto;
     width: 65%;
     color: #FFF; }
     @media (max-width: 575px) {
@@ -170,6 +170,17 @@ body {
           margin: 20px auto; }
         body section .about-me .profile-picture {
           display: none; } }
+    @media (min-width: 576px) and (max-width: 768px) {
+      body section .about-me {
+        width: 90% !important;
+        margin: 4% auto; }
+        body section .about-me .profile-picture {
+          width: 250px !important;
+          height: 250px !important; } }
+    @media (min-width: 769px) and (max-width: 1100px) {
+      body section .about-me {
+        width: 80%;
+        margin: 5% auto; } }
     body section .about-me .text-content {
       width: 48%; }
       body section .about-me .text-content h5.profesion {
@@ -192,15 +203,22 @@ body {
     width: 88%;
     margin: 0 auto;
     padding-bottom: 20px; }
-    @media (min-width: 576px) {
+    @media (min-width: 576px) and (max-width: 991px) {
       body section .tools-tecnology {
-        max-height: 79vh; } }
-    @media (max-width: 575px) {
+        max-height: 77vh;
+        width: 98%;
+        padding: 20px; } }
+    @media (max-width: 767px) {
       body section .tools-tecnology h5 {
         margin-top: 10px; }
+      body section .tools-tecnology hr {
+        width: 100%; }
       body section .tools-tecnology li {
         list-style: square;
         margin-bottom: 20px; } }
+    @media (min-width: 992px) {
+      body section .tools-tecnology {
+        max-height: 79vh; } }
     body section .tools-tecnology::-webkit-scrollbar-thumb {
       background: linear-gradient(45deg, #534949, #b62323);
       border-radius: 10px; }
@@ -213,7 +231,7 @@ body {
       box-shadow: 0 0 1px inset #ccc; }
     body section .tools-tecnology .top-img {
       width: 40px; }
-      @media (min-width: 576px) {
+      @media (min-width: 768px) {
         body section .tools-tecnology .top-img {
           margin-right: 120px; } }
     body section .tools-tecnology .language-icon {
@@ -235,9 +253,12 @@ body {
     margin: 0 auto; }
     @media (min-width: 576px) {
       body section .experience {
-        max-height: 79vh;
+        max-height: 77vh;
         overflow: auto;
         overflow-x: hidden; } }
+    @media (min-width: 1200px) {
+      body section .experience {
+        margin-top: 20px; } }
     body section .experience::-webkit-scrollbar-thumb {
       background: linear-gradient(45deg, #534949, #b62323);
       border-radius: 10px; }
@@ -272,9 +293,36 @@ body {
         max-height: 77vh;
         overflow: auto;
         overflow-x: hidden; } }
-    @media (min-width: 768px) {
-      body section .proyects .content {
+    @media (min-width: 575px) and (max-width: 991px) {
+      body section .proyects {
+        padding: 0 20px; }
+        body section .proyects .card h3 {
+          font-size: 1.3rem; }
+        body section .proyects .card h6 {
+          font-size: 0.85rem; } }
+    @media (min-width: 992px) {
+      body section .proyects {
         padding: 0 50px; } }
+    @media (min-width: 480px) and (max-width: 872px) {
+      body section .proyects .content {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%; }
+      body section .proyects .card {
+        margin: 8px; }
+        body section .proyects .card .card-body {
+          max-height: 100%; }
+        body section .proyects .card .text-end {
+          position: absolute;
+          bottom: 0; }
+        body section .proyects .card .middle {
+          margin-bottom: 70px; } }
+    @media (max-width: 480px), (min-width: 873px) {
+      body section .proyects .card {
+        margin-bottom: 15px; } }
+    @media (min-width: 873px) {
+      body section .proyects .middle {
+        padding-left: 20px; } }
     body section .proyects::-webkit-scrollbar-thumb {
       background: linear-gradient(45deg, #534949, #b62323);
       border-radius: 10px; }
@@ -294,14 +342,21 @@ body {
       object-fit: cover;
       object-position: center;
       padding: 0; }
+      @media (max-width: 872px) {
+        body section .proyects .proyect-img {
+          border-top-left-radius: 3px;
+          border-top-right-radius: 3px; } }
     body section .proyects .card {
       background: linear-gradient(270deg, #584c4c, #7e4343); }
-      @media (max-width: 575px) {
+      @media (max-width: 872px) {
         body section .proyects .card .table td {
           width: 100%;
           display: block; }
           body section .proyects .card .table td.text-end {
             padding: 20px; } }
+      @media (min-width: 576px) {
+        body section .proyects .card .text-end {
+          text-align: center !important; } }
       body section .proyects .card .card-body {
         background-color: rgba(31, 31, 36, 0.95); }
       body section .proyects .card h3 {
@@ -330,7 +385,7 @@ body {
           transition: all .3s; }
   body footer {
     width: 100%; }
-    @media (min-width: 575px) {
+    @media (min-width: 576px) {
       body footer {
         position: absolute;
         bottom: 0; } }

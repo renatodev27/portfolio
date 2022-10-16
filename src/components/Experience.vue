@@ -1,6 +1,6 @@
 <template>
     <div class="background-container">
-        <section class="mt-5">
+        <section>
             <div class="experience">
                 <div class="row">
                     <div class="col-md-6">
