@@ -1,9 +1,13 @@
 <template>
     <nav>
-        <button class="mobile-btn" @click="openCloseMenu()" :class="isOpen ? 'active' : ''">
+        <button class="mobile-btn" @click="openMenu" :class="isOpen ? 'active' : ''">
             <i class="fas fa-bars"></i>
         </button>
         <ul class="desktop-menu" :class="isOpen ? 'menu-open' : ''">
+            <li class="mobile-menu-title">
+                <h5>MENU</h5>
+                <hr>
+            </li>
             <li> 
                 <a class="d-flex justify-content-evenly me-3" @click="menu !== 1 ? toLink(1) : ''" :class="menu === 1 ? 'active' : ''"> 
                     <i class="fas fa-home"></i> <span class="menu-text">Inicio</span>
@@ -29,7 +33,13 @@
                     <i class="fas fa-briefcase"></i> <span class="menu-text">Portfolio</span> 
                 </a> 
             </li>
+            <li class="mobile-cv">
+                <a href="src/cv/CV Renato Ramos.docx" class="download-btn" download>DESCARGAR CV</a>
+            </li>
         </ul>
+        <button class="close-menu" @click="closeMenu" :class="isOpen ? 'active' : ''">
+            <i class="fas fa-times"></i>
+        </button>
     </nav>
 </template>
 
@@ -58,12 +68,15 @@ export default {
                 case 5 : this.$router.push({ name: 'portfolio' }); break;
             }
         },
-        openCloseMenu() {
-            this.isOpen = !this.isOpen;
+        openMenu() {
+            this.isOpen = true;
+        },
+        closeMenu() {
+            this.isOpen = false;
         }
     },
     created() {
-        this.$emit('checkNavStatus', false)
+        this.$emit('checkNavbar', false)
     }
 }
 </script>

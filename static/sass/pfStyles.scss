@@ -15,6 +15,24 @@ body {
 
     a { cursor: pointer } 
 
+    a.download-btn {
+        padding: 10px 50px 10px 50px;
+        border: 1px solid #FFFFFF;
+        border-radius: 50px;
+        margin-top: 30px;
+        display: inline-block;
+        text-decoration: none;
+        text-align: center;
+        background-color: transparent;
+        color: #FFF;
+
+        &:hover {
+            transition: all .3s;
+            background-color: #FFFFFF;
+            color:  #1a1a1a;
+        }
+    }
+
     nav {
         z-index: 999;
         width: 100%;
@@ -28,32 +46,36 @@ body {
 
             @media (max-width: 575px) { 
                 display: block;
-                visibility: hidden;
-                opacity: 0;
                 padding: 0;
                 z-index: 2;
-                margin-left: 10px;
-                margin-right: 50px;
-                margin-top: -10px;
-                height: 0;
+                top: 0;
+                position: fixed;
+                width: 200px;
+                margin-left: -200px;
+                height: 100%;
                 transition: ease-in .3s;
-                border: 1px solid rgb(255, 64, 64);
-                background-color: rgba(28, 28, 32, 0.85);
-                border-radius: 0 5px 5px 5px;
-                //box-shadow: 0 0 6px 0 rgb(119, 52, 52);
+                background-color: rgba(28, 28, 32, 0.993);
+                border-radius: 0 3px 3px 3px;
 
                 &.menu-open {
                     visibility: visible;
-                    height: 100%;
+                    width: 45%;
                     opacity: 1;
+                    margin-left: 0;
                     transition: ease-out .4s;
                 }
 
                 li {
-                    border-bottom: 1px solid rgb(255, 64, 64);
+                    padding: 5px 10px 5px 10px;
 
-                    &:last-child {
-                        border-bottom: none;
+                    &:first-child {
+                        padding-top: 15px;
+                        color: #FFF;
+                        
+                        hr {
+                            margin-top: 1px;
+                            border-bottom: 1px solid #797979;
+                        }
                     }
 
                     a{ 
@@ -62,12 +84,15 @@ body {
                         padding: 7px;
                         width: 100%;
                         color: #FFF;
+                        font-size: .85rem;
 
                         &:active, &.active {
                             background-color: rgb(255, 64, 64) !important;
                             color: #fff;
+                            border-radius: 5px;
                             font-weight: bold;
                             transition: all .3s;
+                            box-shadow: 0 0 3px 0 rgb(46, 18, 18) inset;
                         }
 
                         .menu-text { 
@@ -125,7 +150,8 @@ body {
                                 visibility: visible; 
                                 font-weight: bold; 
                                 margin-right: 0; 
-                                opacity: 1 }
+                                opacity: 1 
+                            }
                         }
                     }
                 }
@@ -142,15 +168,52 @@ body {
                 background-color: transparent;
                 border: none;
 
-                &:active, &.active {
+                &:active {
                     background-color: rgb(255, 64, 64);
                     color: rgb(255, 255, 255);
-                    border-radius: 4px 4px 0 0;
+                    border-radius: 3px 3px 0 0;
                     transition: all .3s;
-                    //border: 1px solid rgb(255, 104, 104);
                 }
             }
 
+            .mobile-cv {
+                display: block !important;
+                position: absolute;
+                width: 100%;
+                bottom: 3%;
+
+                .download-btn {
+                    background-color: #FFF;
+                    color: #0a0a14;
+                    font-weight: bold;
+                }
+            }
+
+            .mobile-menu-title {
+                display: block !important;
+            }
+
+            .close-menu {
+                display: block !important;
+                position: absolute;
+                visibility: hidden;
+                top: 0;
+                right: 0;
+                margin: 10px;
+                padding: 5px 10px 5px 10px;
+                background: transparent;
+                border: none;
+                color: #FFF;
+
+                &.active {
+                    visibility: visible;
+                    transition: ease-out .3s all;
+                }
+            }
+        }
+
+        .close-menu, .mobile-cv, .mobile-menu-title {
+            display: none;
         }
     }
 
@@ -187,23 +250,6 @@ body {
             h1.lastname {
                 font-weight: 800;
                 font-size: 3.5rem;
-            }
-        }
-
-        a.download-btn {
-            padding: 10px 50px 10px 50px;
-            border: 1px solid #FFFFFF;
-            border-radius: 50px;
-            margin-top: 30px;
-            display: inline-block;
-            text-decoration: none;
-            background-color: transparent;
-            color: #FFF;
-
-            &:hover {
-                transition: all .3s;
-                background-color: #FFFFFF;
-                color:  #1a1a1a;
             }
         }
     }

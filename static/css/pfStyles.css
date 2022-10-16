@@ -13,6 +13,20 @@ body {
       overflow: hidden; } }
   body a {
     cursor: pointer; }
+  body a.download-btn {
+    padding: 10px 50px 10px 50px;
+    border: 1px solid #FFFFFF;
+    border-radius: 50px;
+    margin-top: 30px;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    background-color: transparent;
+    color: #FFF; }
+    body a.download-btn:hover {
+      transition: all .3s;
+      background-color: #FFFFFF;
+      color: #1a1a1a; }
   body nav {
     z-index: 999;
     width: 100%;
@@ -25,38 +39,44 @@ body {
       @media (max-width: 575px) {
         body nav ul.desktop-menu {
           display: block;
-          visibility: hidden;
-          opacity: 0;
           padding: 0;
           z-index: 2;
-          margin-left: 10px;
-          margin-right: 50px;
-          margin-top: -10px;
-          height: 0;
+          top: 0;
+          position: fixed;
+          width: 200px;
+          margin-left: -200px;
+          height: 100%;
           transition: ease-in .3s;
-          border: 1px solid #ff4040;
-          background-color: rgba(28, 28, 32, 0.85);
-          border-radius: 0 5px 5px 5px; }
+          background-color: rgba(28, 28, 32, 0.993);
+          border-radius: 0 3px 3px 3px; }
           body nav ul.desktop-menu.menu-open {
             visibility: visible;
-            height: 100%;
+            width: 45%;
             opacity: 1;
+            margin-left: 0;
             transition: ease-out .4s; }
           body nav ul.desktop-menu li {
-            border-bottom: 1px solid #ff4040; }
-            body nav ul.desktop-menu li:last-child {
-              border-bottom: none; }
+            padding: 5px 10px 5px 10px; }
+            body nav ul.desktop-menu li:first-child {
+              padding-top: 15px;
+              color: #FFF; }
+              body nav ul.desktop-menu li:first-child hr {
+                margin-top: 1px;
+                border-bottom: 1px solid #797979; }
             body nav ul.desktop-menu li a {
               display: block !important;
               text-decoration: none;
               padding: 7px;
               width: 100%;
-              color: #FFF; }
+              color: #FFF;
+              font-size: .85rem; }
               body nav ul.desktop-menu li a:active, body nav ul.desktop-menu li a.active {
                 background-color: #ff4040 !important;
                 color: #fff;
+                border-radius: 5px;
                 font-weight: bold;
-                transition: all .3s; }
+                transition: all .3s;
+                box-shadow: 0 0 3px 0 #2e1212 inset; }
               body nav ul.desktop-menu li a .menu-text {
                 margin-left: 10px; } }
       @media (min-width: 576px) {
@@ -107,11 +127,38 @@ body {
         color: #FFF;
         background-color: transparent;
         border: none; }
-        body nav .mobile-btn:active, body nav .mobile-btn.active {
+        body nav .mobile-btn:active {
           background-color: #ff4040;
           color: white;
-          border-radius: 4px 4px 0 0;
-          transition: all .3s; } }
+          border-radius: 3px 3px 0 0;
+          transition: all .3s; }
+      body nav .mobile-cv {
+        display: block !important;
+        position: absolute;
+        width: 100%;
+        bottom: 3%; }
+        body nav .mobile-cv .download-btn {
+          background-color: #FFF;
+          color: #0a0a14;
+          font-weight: bold; }
+      body nav .mobile-menu-title {
+        display: block !important; }
+      body nav .close-menu {
+        display: block !important;
+        position: absolute;
+        visibility: hidden;
+        top: 0;
+        right: 0;
+        margin: 10px;
+        padding: 5px 10px 5px 10px;
+        background: transparent;
+        border: none;
+        color: #FFF; }
+        body nav .close-menu.active {
+          visibility: visible;
+          transition: ease-out .3s all; } }
+    body nav .close-menu, body nav .mobile-cv, body nav .mobile-menu-title {
+      display: none; }
   body .background-container {
     width: 100%; }
     @media (min-width: 576px) {
@@ -137,19 +184,6 @@ body {
       body header .content h1.lastname {
         font-weight: 800;
         font-size: 3.5rem; }
-    body header a.download-btn {
-      padding: 10px 50px 10px 50px;
-      border: 1px solid #FFFFFF;
-      border-radius: 50px;
-      margin-top: 30px;
-      display: inline-block;
-      text-decoration: none;
-      background-color: transparent;
-      color: #FFF; }
-      body header a.download-btn:hover {
-        transition: all .3s;
-        background-color: #FFFFFF;
-        color: #1a1a1a; }
   body section .about-me {
     display: flex;
     justify-content: space-between;
