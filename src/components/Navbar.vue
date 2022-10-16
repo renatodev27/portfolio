@@ -70,13 +70,15 @@ export default {
         },
         openMenu() {
             this.isOpen = true;
+            this.$emit('checkNavbar', this.isOpen)
         },
         closeMenu() {
             this.isOpen = false;
+            this.$emit('checkNavbar', this.isOpen)
         }
     },
-    created() {
-        this.$emit('checkNavbar', false)
+    mounted() {
+        this.$emit('checkNavbar', this.isOpen)
     }
 }
 </script>
