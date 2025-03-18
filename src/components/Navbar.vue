@@ -34,7 +34,7 @@
                 </a> 
             </li>
             <li class="mobile-cv">
-                <a href="/src/cv/CV_Renato_Ramos.docx" class="download-btn" download>DESCARGAR CV</a>
+                <a href="javascript:void(0)" class="download-btn" @click="downloadFile()">DESCARGAR CV</a>
             </li>
         </ul>
         <button class="close-menu" @click="closeMenu" :class="isOpen ? 'active' : ''">
@@ -54,7 +54,9 @@ export default {
     },
     data() {
         return {
-            isOpen: false
+            isOpen: false,
+            fileUrl: '/src/cv/CV_Renato_Ramos.docx',
+            fileName: 'CV_Renato_Ramos.docx'
         }
     },
     methods: {
@@ -67,6 +69,16 @@ export default {
                 case 4 : this.$router.push({ name: 'experience' }); break;
                 case 5 : this.$router.push({ name: 'portfolio' }); break;
             }
+        },
+        downloadFile() {
+            const link = document.createElement('a');
+            link.href = this.fileUrl;
+            link.target = '_blank';
+            link.download = this.fileName;
+
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         },
         openMenu() {
             this.isOpen = true;
