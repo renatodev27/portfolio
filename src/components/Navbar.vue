@@ -34,7 +34,7 @@
                 </a> 
             </li>
             <li class="mobile-cv">
-                <a href="src/cv/CV Renato Ramos.docx" class="download-btn" download>DESCARGAR CV</a>
+                <a href="/src/cv/CV_Renato_Ramos.docx" class="download-btn" download>DESCARGAR CV</a>
             </li>
         </ul>
         <button class="close-menu" @click="closeMenu" :class="isOpen ? 'active' : ''">
