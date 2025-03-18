@@ -17,7 +17,7 @@ export default {
     name: 'home',
     data() {
         return {
-            fileUrl: '/src/cv/CV_Renato_Ramos.docx',
+            fileUrl: '/static/cv/CV_Renato_Ramos.docx',
             fileName: 'CV_Renato_Ramos.docx'
         }  
     },
